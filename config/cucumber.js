@@ -11,7 +11,6 @@ module.exports = {
             snippetInterface: "async-await"
         },
         format: [
-            "progress-bar",
             "html:test-results/reports/cucumber-reports.html",
             "json:test-results/reports/cucumber-reports.json",
             "rerun:@rerun.txt"
