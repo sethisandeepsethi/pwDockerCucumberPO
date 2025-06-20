@@ -1,7 +1,8 @@
 services:
   playwright-test:
-    image: mcr.microsoft.com/playwright:v1.53.1-noble
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: playwright_docker
     working_dir: /app
     volumes:

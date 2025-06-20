@@ -45,11 +45,14 @@ npm install
 npm run test
 ```
 
-### Run Tests in Docker
-Build and run tests using Docker Compose:
-```bash
-docker-compose up --build
-```
+## To run tests via Dockerfile
+- `docker build .` - Build image as specified in Dockerfile in current directory
+- `docker images`  - Display images that are currently present
+- `docker run <image_id>` - Runs container made from docker image
+
+## To run tests via docker-compose
+- First build an image as specified in Dockerfile using `build` tag
+- `docker-compose up` - Runs the container as specified in docker-compose.yml file in current directory
 
 ## Writing Tests
 - Add feature files in `src/test/features/`
@@ -60,6 +63,8 @@ docker-compose up --build
 - `npm run test` — Run all tests
 - `npm run test:debug` — Run tests in debug mode (if configured)
 - `docker-compose up --build` — Build and run tests in Docker
+
+
 
 ## Configuration
 - **Playwright config:** `playwright.config.ts`
