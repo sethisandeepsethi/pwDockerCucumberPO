@@ -1,0 +1,35 @@
+{
+  "name": "saucedemo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean:reports": "rm -rf test-results && mkdir -p test-results",
+    "clean:reportsWindows": "rm -rf test-results && mkdir -p test-results",
+    "generate:reports": "npx ts-node ./src/helper/reportGenerator.ts",
+    "pretest": "npm run clean:reports",
+    "posttest": "npm run generate:reports",
+    "test": "cross-env ENV=uat FORCE_COLOR=1 cucumber-js --require-module ts-node/register --config=config/cucumber.js || true",
+    "execute:script:rerun": "cucumber-js -p rerun @rerun.txt",
+    "test:rerun": "npm run execute:script:rerun || npm run generate:reports",
+    "ZZZexecute:script": "cross-env ENV=uat cucumber-js --config=config/cucumber.js",
+    "ZZZtest": "npm run execute:script || npm run posttest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0",
+    "@playwright/test": "^1.53.1",
+    "@types/node": "^22.15.32",
+    "allure-commandline": "^2.34.0",
+    "allure-playwright": "^3.2.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.5.0",
+    "mkdirp": "^3.0.1",
+    "multiple-cucumber-html-reporter": "^3.9.3",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "winston": "^3.17.0"
+  }
+}
