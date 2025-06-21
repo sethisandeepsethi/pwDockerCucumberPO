@@ -7,12 +7,9 @@ WORKDIR /app
 # Copy your application code into the container
 COPY . /app
  
-# Install Java and other dependencies
+# Install dependencies
 RUN apt-get update
 RUN npm install
- 
-# Set environment variables or additional configuration if needed
-#ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
  
 # Command to run your Playwright tests
 CMD ["npm", "test"]
