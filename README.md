@@ -54,29 +54,7 @@ npm run test
 - First build an image as specified in Dockerfile using `build` tag
 - `docker-compose up` - Runs the container as specified in docker-compose.yml file in current directory
 
-## Writing Tests
-- Add feature files in `src/test/features/`
-- Implement step definitions in `src/test/steps/`
-- Add or update page objects in `pages/`
-
-## Useful Commands
-- `npm run test` — Run all tests
-- `npm run test:debug` — Run tests in debug mode (if configured)
-- `docker-compose up --build` — Build and run tests in Docker
-
-
-
 ## Configuration
 - **Playwright config:** `playwright.config.ts`
 - **Cucumber config:** `config/cucumber.js`
 - **Docker:** `Dockerfile`, `docker-compose.yml`
-
-## Reports
-- Test reports are generated in `cucumber.json` and can be extended for HTML or other formats.
-
-## Troubleshooting
-- Ensure Docker has access to your project directory.
-- If you encounter permission issues, try running Docker with elevated privileges or adjust file permissions.
-
-## License
-MIT
